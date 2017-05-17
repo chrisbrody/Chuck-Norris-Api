@@ -1,0 +1,35 @@
+#content {
+    background-color: #666;
+    border-radius: 10px;
+    margin-top: 5%;
+    max-width: 800px;
+}
+blockquote, button, h1 {
+    border: 2px black dashed;
+    margin-top: 3em;
+    color: black;
+    opacity: 0.5;
+    border-radius: 12px;
+    font-family: serif;
+    padding: 10px 20px;
+    margin: 0 0 20px;
+}
+h1 {
+  border: transparent;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 17.5px;
+}
+button.viewjokes:hover {
+  background-color: rgb(187, 233, 150);
+  transition: 0.3s all ease-in-out
+}
+button.hidejokes:hover {
+  background-color: rgb(219, 87, 102);
+  transition: 0.3s all ease-in-out
+}
+button:focus {
+  outline: none;
+}
