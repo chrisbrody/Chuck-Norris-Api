@@ -85,13 +85,13 @@ document.addEventListener("keypress", function() {
 });
 
 
+
+// create color for background
 var nextHue = Math.floor(Math.random() * 360);
-changeColors()
+// add background on load
+changeColors();
+
 function changeColors() {
-  /*var hash = Math.abs(joke.split("").reduce(function(a, b) {
-    a = ((a << 5) - a) + b.charCodeAt(0);
-    return a & a;
-  }, 0));*/
   var hue = nextHue,
       sat = 65,
       loval = 60,
@@ -99,8 +99,9 @@ function changeColors() {
       dark = hsl2rgb(hue, sat, loval),
       light = hsl2rgb(hue, sat, hival);
 
-  $('body').css('background-color', 'rgb(' + light.r +','+ light.g +','+ light.b + ')');
-  $('div#content').css('background-color', 'rgb(' + dark.r +','+ dark.g +','+ dark.b + ')');
+  // set background for body and element with id="content"
+  document.body.style.backgroundColor = 'rgb(' + light.r +','+ light.g +','+ light.b + ')';
+  document.getElementById("content").style.backgroundColor = 'rgb(' + dark.r +','+ dark.g +','+ dark.b + ')';
   nextHue = (nextHue + 10) % 360;
 }
 
