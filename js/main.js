@@ -54,10 +54,24 @@ function hidealljokes() {
 document.getElementById("hidealljokes").addEventListener("click", hidealljokes, false);
 
 
-
+var audioPlayNumber = 0;
+function playAudio() {
+  // play sound
+  if (audioPlayNumber == 1) {
+    document.getElementById("jabAudio").play();
+    audioPlayNumber = 0;
+  } else if (audioPlayNumber == 0){
+    document.getElementById("kickAudio").play();
+    audioPlayNumber = 1;
+  };
+}
 // function for random jokes
 function randomjoke(){
-  changeColors()
+  // update color
+  changeColors();
+  // play sound
+  playAudio();
+
   // get random number based on length of joke array
   var random = Math.floor(Math.random() * jokeArray.length);
 
@@ -75,6 +89,7 @@ function randomjoke(){
 
   // add joke to HTML
   viewalljokesdiv.appendChild(el);
+
 };
 // add event to element with id="newrandomjokes"
 document.getElementById("newrandomjokes").addEventListener("click", randomjoke, false);
